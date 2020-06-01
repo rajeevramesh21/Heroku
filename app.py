@@ -27,19 +27,15 @@ def predict():
     
     df['YOE'].value_counts().plot(kind='pie')
     
-    
-
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
-def chart():
-    
     fig = px.histogram(df, x='Salary')
     fig.show()
-    return render_template('index.html', name = fig.show())
-def chart1():
-    
+    render_template('index.html', name = fig.show())
+
     fig1 = px.pie(df,'Age')
     fig1.show()
-    return render_template('index.html', name1 = fig1.show())
+    render_template('index.html', name1 = fig1.show())
+
+    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
