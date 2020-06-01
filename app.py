@@ -34,12 +34,12 @@ def chart():
     
     fig = px.histogram(df, x='Salary')
     fig.show()
-    return render_template('untitled1.html', name = fig.show())
+    return render_template('index.html', name = fig.show())
 def chart1():
     
     fig1 = px.pie(df,'Age')
     fig1.show()
-    return render_template('untitled2.html', name1 = fig1.show())
+    return render_template('index.html', name1 = fig1.show())
 
 if __name__ == "__main__":
     app.run(debug=True)
