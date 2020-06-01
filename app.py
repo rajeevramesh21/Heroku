@@ -1,13 +1,10 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-import matplotlib.pyplot as plt
-import plotly.express as px
-import pandas as pd
+
 
 
 app = Flask(__name__)
-df=pd.read_excel('New Microsoft Excel Worksheet.xlsx')
 model = pickle.load(open('salmodel.pkl', 'rb'))
 
 @app.route('/')
