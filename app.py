@@ -28,12 +28,12 @@ def predict():
     df['YOE'].value_counts().plot(kind='pie')
     
     fig = px.histogram(df, x='Salary')
-    fig.show()
-    render_template('index.html', name = fig.show())
+    
+    
 
     fig1 = px.pie(df,'Age')
     fig1.show()
-    render_template('index.html', name1 = fig1.show())
+    
 
     return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
 
