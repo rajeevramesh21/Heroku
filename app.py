@@ -32,10 +32,11 @@ def predict():
     
 
     fig1 = px.pie(df,'Age')
-    fig1.show()
+    
     
 
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
+    return (render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output)),
+                           render_template('index.html', name= fig1.show()))
 
 if __name__ == "__main__":
     app.run(debug=True)
